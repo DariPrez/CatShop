@@ -1,6 +1,6 @@
 import { Item } from './item.model';
 
-export const ITEMS: Item[] = [{
+export const CATS: Item[] = [{
     'id': 1,
     'name': 'Angora',
     'description': 'Los angora son una de las razas más antiguas, originaria de la región de Ankara, en Turquía centra.',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item.model';
-import { ITEMS } from './mocks';
+import { CATS } from './mocks';
 
 @Component({
   selector: 'app-item-list',
@@ -9,11 +9,11 @@ import { ITEMS } from './mocks';
 })
 export class ItemListComponent implements OnInit {
 
-  myItems: Item[];
+  myCats: Item[];
   // public totalItems() {
   //   let suma = 0;
-  //   for (let i = 0; i < this.myItems.length; i++) { // for (let myItems of this.myItems){ suma += myItems.stock; }
-  //     suma += this.myItems[i].stock;
+  //   for (let i = 0; i < this.myCats.length; i++) { // for (let myCats of this.myCats){ suma += myCats.stock; }
+  //     suma += this.myCats[i].stock;
   //   }
   //   return suma;
   // }
@@ -21,10 +21,10 @@ export class ItemListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.myItems = ITEMS;
+    this.myCats = CATS;
   }
 
   public totalItems() {
-    return this.myItems.reduce((prev, current) => prev + current.stock, 0);
+    return this.myCats.reduce((prev, current) => prev + current.stock, 0);
   }
 }
