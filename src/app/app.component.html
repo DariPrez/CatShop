@@ -1,23 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header>
-  <div>
-    <h1>
-      Welcome to {{title}}!
-    </h1>
-    <img src="/../assets/image1.jpg" height="400">
-  </div>
-</header>
-<div id="container">
-  <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
-  <ul>
-    <li *ngFor="let items of myCats">
-      <h2>{{items.name |uppercase }}</h2>
-      <p>{{items.description}}</p>
-      <p *ngIf="items.stock > 0">{{items.price | currency: 'EUR': true}}</p>
-      <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
-      <p *ngIf="items.stock === 0">Out of Stock</p>
-    </li>
-  </ul>
+<div>
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <img src="/../assets/image1.jpg" height="400">
+<app-item-list></app-item-list>
 </div>
-
-
