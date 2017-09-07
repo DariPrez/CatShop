@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'CatShop';
+
+  myCat = {
+    'id': 1,
+    'name': 'Angora',
+    'description': 'Los angora son una de las razas más antiguas, originaria de la región de Ankara, en Turquía centra.',
+    'stock': 5
+  };
 }
