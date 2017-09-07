@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from './item.model';
+import { ITEMS } from './mocks';
 
 @Component({
   selector: 'app-item-list',
@@ -7,30 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemListComponent implements OnInit {
 
-  myCats = [{
-    'id': 1,
-    'name': 'Angora',
-    'description': 'Los angora son una de las razas más antiguas, originaria de la región de Ankara, en Turquía centra.',
-    'stock': 5,
-    'price': 12.50
-  }, {
-    'id': 2,
-    'name': 'Otto',
-    'description': 'Los Ottos son una de las razas más antiguas, originaria de la región de Ankara, en Turquía centra.',
-    'stock': 8,
-    'price': 10.50
-  }, {
-    'id': 3,
-    'name': 'Egipcio',
-    'description': 'Los Egipcios son una de las razas más antiguas, originaria de la región de Ankara, en Turquía centra.',
-    'stock': 0,
-    'price': 15.50
-  }];
-
+  myItems: Item[];
   // public totalItems() {
   //   let suma = 0;
-  //   for (let i = 0; i < this.myCats.length; i++) { // for (let myCats of this.myCats){ suma += myCats.stock; }
-  //     suma += this.myCats[i].stock;
+  //   for (let i = 0; i < this.myItems.length; i++) { // for (let myItems of this.myItems){ suma += myItems.stock; }
+  //     suma += this.myItems[i].stock;
   //   }
   //   return suma;
   // }
@@ -38,9 +21,10 @@ export class ItemListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.myItems = ITEMS;
   }
 
   public totalItems() {
-    return this.myCats.reduce((prev, current) => prev + current.stock, 0);
+    return this.myItems.reduce((prev, current) => prev + current.stock, 0);
   }
 }
