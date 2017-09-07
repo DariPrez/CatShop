@@ -1,10 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <h2>{{myCat.name}}</h2>
-  <p>{{myCat.description}}</p>
-  <p>{{myCat.stock}} in Stock</p>
+<header>
+  <div>
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+    <img src="/../assets/image1.jpg" height="400">
+  </div>
+</header>
+<div id="container">
+  <ul>
+    <li *ngFor="let items of myCats">
+      <h2>{{items.name}}</h2>
+      <p>{{items.description}}</p>
+      <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
+      <p *ngIf="items.stock === 0">Out of Stock</p>
+    </li>
+  </ul>
 </div>
+
 
