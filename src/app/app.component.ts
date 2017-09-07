@@ -27,4 +27,16 @@ export class AppComponent {
     'stock': 0,
     'price': 15.50
   }];
+
+  // public totalItems() {
+  //   let suma = 0;
+  //   for (let i = 0; i < this.myCats.length; i++) { // for (let myCats of this.myCats){ suma += myCats.stock; }
+  //     suma += this.myCats[i].stock;
+  //   }
+  //   return suma;
+  // }
+
+  public totalItems() {
+    return this.myCats.reduce((prev, current) => prev + current.stock, 0);
+  }
 }

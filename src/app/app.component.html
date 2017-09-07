@@ -8,6 +8,7 @@
   </div>
 </header>
 <div id="container">
+  <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
   <ul>
     <li *ngFor="let items of myCats">
       <h2>{{items.name |uppercase }}</h2>
