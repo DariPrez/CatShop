@@ -1,15 +1,20 @@
-
-<h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
-<ul>
-  <li *ngFor="let items of myCats">
-    <h2>{{items.name |uppercase }}</h2>
-    <p>{{items.description}}</p>
-    <p *ngIf="items.stock > 0">{{items.price | currency: 'EUR': true}}</p>
-    <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
-    <p *ngIf="items.stock === 0">Out of Stock</p>
-  </li>
-</ul>
-
-  
+<div>
+  <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
+</div>
+<div>
+  <section class="section">
+    <ul>
+      <li *ngFor="let items of myCats" [class.selected]="items.selected">
+        <img [src] = "items.image"/>
+        <h2>{{items.name |uppercase }}</h2>
+        <p>{{items.description}}</p>
+        <p *ngIf="items.stock > 0">{{items.price | currency: 'EUR': true}}</p>
+        <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
+        <p *ngIf="items.stock === 0">Out of Stock</p>
+        <button [class.selected] ="items.selected">CLiskS</button>
+      </li>
+    </ul>
+  </section>
+</div>
   
   

@@ -1,5 +1,4 @@
 *{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #D496D7;
 }
 
@@ -9,4 +8,8 @@ h1{
 
 h2{
     background-color: yellow;
+}
+
+.selected {
+    border: 1px solid blue;
 }
