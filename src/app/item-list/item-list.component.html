@@ -2,6 +2,10 @@
   <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
   <!-- <input type="text" (keydown)="showKey($event)">
   <h2 (mouseover)="getCoord($event)">HOVER ME</h2>  -->
+  <!-- <form action="summit">
+  Search: <input type="text" [(ng-model)]="name">
+  <button class="btn-amount" (click)="searchText()">Buscar</button>
+</form> -->
 </div>
 <div>
   <section class="section">
@@ -15,7 +19,7 @@
         <p *ngIf="items.stock === 0">Out of Stock</p>
         <button class="btn-amount" [disabled]="items.quantity === 0" (click)="downQuantity(items)">-</button>
         <input type="number" maxlength="2" placeholder="0" [value]="items.quantity"/>
-        <button class="btn-amount" [disabled]="items.stock === 0"  (click)="upQuantity(items)">+</button>
+        <button class="btn-amount" [disabled]="items.stock === 0"  (click)="upQuantity(items)">+</button> <!-- [] = () = [()]=-->
       </li>
     </ul>
   </section>
