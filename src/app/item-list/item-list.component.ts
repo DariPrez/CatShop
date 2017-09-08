@@ -37,4 +37,13 @@ export class ItemListComponent implements OnInit {
     item.quantity--;
     item.stock++;
   }
+
+  // showKey(event) {
+  //   alert(event.keyCode);
+  // }
+
+  // getCoord(event) {
+  //   console.log(event.clientX + ', ' + event.clientY);
+  // }
+
 }

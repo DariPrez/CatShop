@@ -1,5 +1,7 @@
 <div>
   <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
+  <!-- <input type="text" (keydown)="showKey($event)">
+  <h2 (mouseover)="getCoord($event)">HOVER ME</h2>  -->
 </div>
 <div>
   <section class="section">
@@ -11,9 +13,9 @@
         <p *ngIf="items.stock > 0">{{items.price | currency: 'EUR': true}}</p>
         <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
         <p *ngIf="items.stock === 0">Out of Stock</p>
-        <button class="bg-amount" [disabled]="items.quantity === 0" (click)="downQuantity(items)">-</button>
+        <button class="btn-amount" [disabled]="items.quantity === 0" (click)="downQuantity(items)">-</button>
         <input type="number" maxlength="2" placeholder="0" [value]="items.quantity"/>
-        <button [disabled]="items.stock === 0"  (click)="upQuantity(items)">+</button>
+        <button class="btn-amount" [disabled]="items.stock === 0"  (click)="upQuantity(items)">+</button>
       </li>
     </ul>
   </section>
