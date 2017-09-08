@@ -38,9 +38,9 @@ export class ItemListComponent implements OnInit {
     item.stock++;
   }
 
-  searchText(name) {
-    console.log(name);
-  }
+  // searchText(name) {
+  //   console.log(name);
+  // }
   // showKey(event) {
   //   alert(event.keyCode);
   // }
