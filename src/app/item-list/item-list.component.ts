@@ -27,4 +27,14 @@ export class ItemListComponent implements OnInit {
   public totalItems() {
     return this.myCats.reduce((prev, current) => prev + current.stock, 0);
   }
+
+  public upQuantity(item: Item) {
+    item.quantity++;
+    item.stock--;
+  }
+
+  public downQuantity(item: Item) {
+    item.quantity--;
+    item.stock++;
+  }
 }
