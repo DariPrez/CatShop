@@ -2,18 +2,18 @@
   <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
   <!-- <input type="text" (keydown)="showKey($event)">
   <h2 (mouseover)="getCoord($event)">HOVER ME</h2>  -->
-  <!-- <form action="summit">
-  Search: <input type="text" [(ng-model)]="name">
-  <button class="btn-amount" (click)="searchText()">Buscar</button>
-</form> -->
+
 </div>
 <div>
+    <p>Search: <input type="text" [(ngModel)]="mySearch"></p>
   <section class="section">
     <ul>
-      <li *ngFor="let items of myCats" [class.selected]="items.selected">
+      <li *ngFor="let items of myCats | search:mySearch" [class.selected]="items.selected">
         <img [src] = "items.image"/>
         <h2>{{items.name |uppercase }}</h2>
         <p>{{items.description}}</p>
+        <input type="text" [value]="items.description" [disabled]="items.stock ===0">
+        
         <p *ngIf="items.stock > 0">{{items.price | currency: 'EUR': true}}</p>
         <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
         <p *ngIf="items.stock === 0">Out of Stock</p>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item.model';
-import { CATS } from './mocks';
+import { ItemListService } from './item-list.service';
 
 @Component({
   selector: 'app-item-list',
@@ -10,6 +10,7 @@ import { CATS } from './mocks';
 export class ItemListComponent implements OnInit {
 
   myCats: Item[];
+  mySearch: string;
   // public totalItems() {
   //   let suma = 0;
   //   for (let i = 0; i < this.myCats.length; i++) { // for (let myCats of this.myCats){ suma += myCats.stock; }
@@ -18,14 +19,17 @@ export class ItemListComponent implements OnInit {
   //   return suma;
   // }
 
-  constructor() { }
+  constructor(private itemListService: ItemListService) { }
 
   ngOnInit() {
-    this.myCats = CATS;
+    this.itemListService.getItemList()
+                        .subscribe(myCats => this.myCats = myCats);
+    // this.myCats = this.itemListService.getItemList();
   }
 
   public totalItems() {
-    return this.myCats.reduce((prev, current) => prev + current.stock, 0);
+    // tslint:disable-next-line:whitespace
+    return this.myCats ? this.myCats.reduce((prev, current) => prev + current.stock, 0):0;
   }
 
   public upQuantity(item: Item) {
