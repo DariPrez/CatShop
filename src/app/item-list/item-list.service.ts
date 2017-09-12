@@ -17,9 +17,9 @@ export class ItemListService {
     // getItemList(): Item[] {
     //     return CATS;
     // }
-    addItem(item: Item): Observable<Item[]> {
-        let headers = new Headers({ 'Content-Type': 'application/json' }); // .. Set content type to JSON
-        let options = new RequestOptions({ headers: headers}); // create a request option
+    updateItem(item: Item): Observable<Item[]> {
+        const headers = new Headers({ 'Content-Type': 'application/json' }); // .. Set content type to JSON
+        const options = new RequestOptions({ headers: headers}); // create a request option
 
         return this.http.put(`http://localhost:3000/item-list/${item['id']}`, item, options)
                         .map((res: Response) => res.json())

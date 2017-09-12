@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let items of myCats | search:mySearch" [class.selected]="items.selected">
+      <img [src] = "items.image"/>
+      <h2>{{items.name |uppercase }}</h2>
+      <p *ngIf="!items.editable" id="description" (click)="disabled(items)">{{items.description}}</p>
+      <p *ngIf="items.editable"><input type="text" [(ngModel)]="items.description" (blur)="getUpdateService(items)"></p>
+      <p *ngIf="items.stock > 0">{{items.price | currency: 'EUR': true}}</p>
+      <p *ngIf="items.stock > 0">{{items.stock}} in Stock</p>
+      <p *ngIf="items.stock === 0">Out of Stock</p>
+      <button class="btn-amount" [disabled]="items.quantity === 0" (click)="downQuantity(items)">-</button>
+      <input type="number" maxlength="2" placeholder="0" [value]="items.quantity"/>
+      <button class="btn-amount" [disabled]="items.stock === 0"  (click)="upQuantity(items)">+</button> <!-- [] = () = [()]=-->
+    </li>
+</ul>

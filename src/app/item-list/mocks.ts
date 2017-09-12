@@ -8,7 +8,8 @@ export const CATS: Item[] = [{
     'price': 12.50,
     'image': '../assets/image1.jpg',
     'selected': false,
-    'quantity' : 0
+    'quantity' : 0,
+    'editable': false
   }, {
     'id': 2,
     'name': 'Otto',
@@ -17,7 +18,8 @@ export const CATS: Item[] = [{
     'price': 10.50,
     'image': '../assets/image2.jpg',
     'selected': false,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
   }, {
     'id': 3,
     'name': 'Egipcio',
@@ -26,5 +28,6 @@ export const CATS: Item[] = [{
     'price': 15.50,
     'image': '../assets/image3.jpg',
     'selected': true,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
   }];
