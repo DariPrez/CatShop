@@ -2,7 +2,7 @@
   <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
   <!-- <input type="text" (keydown)="showKey($event)">
   <h2 (mouseover)="getCoord($event)">HOVER ME</h2>  -->
-  <h1 align=right><img src="../../assets/cart.png" /> {{myCart.items.length}}</h1>
+  <h1 align=right><img src="../../assets/cart.png" routerLink="/order" routerLinkActive="active"/> {{myCart.items.length}}</h1>
 </div>
 <div>
     <p>Search: <input type="text" [(ngModel)]="mySearch"></p>
@@ -20,7 +20,7 @@
         <button class="btn-amount" [disabled]="items.quantity === 0" (click)="downQuantity(items)">-</button>
         <input type="number" maxlength="2" placeholder="0" [value]="items.quantity"/>
         <button class="btn-amount" [disabled]="items.stock === 0"  (click)="upQuantity(items)">+</button> <!-- [] = () = [()]=-->
-        <button class="button" (click)="addToCart(items)">Add to Cart!</button>
+        <p><button class="button" [disabled]="items.quantity === 0" (click)="addToCart(items)">Add to Cart!</button></p>
       </li>
     </ul>
   </section>

@@ -61,7 +61,7 @@ export class ItemListComponent implements OnInit {
   }
 
   addToCart(item: Item) {
-    this.cartService.addeItem(item);
+    this.cartService.addItem(item);
   }
 
   // searchText(name) {

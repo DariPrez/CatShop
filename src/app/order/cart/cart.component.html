@@ -1,3 +1,10 @@
-<p>
-  cart works!
-</p>
+
+  <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
+
+<ul>
+  <li *ngFor="let items of myCart.items">
+    <p>{{items.name}}</p>
+    <p>{{items.quantity}} x {{items.price}} = {{totalPayByItem(items.quantity, items.price)| currency: 'EUR': true}}</p>
+    <p><button (click)="remove(items)">Eliminar</button></p>
+  </li>
+</ul>
