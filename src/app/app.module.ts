@@ -10,6 +10,7 @@ import { ItemListService } from './item-list/item-list.service';
 import { ItemComponent } from './item-list/item/item.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './order/cart/cart.component';
+import { CartService } from './order/cart/cart.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import { CartComponent } from './order/cart/cart.component';
     FormsModule,
     HttpModule
   ],
-  providers: [ItemListService],
+  providers: [
+    ItemListService,
+    CartService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from './item.model';
 import { ItemListService } from './item-list.service';
 import { Cart } from '../order/cart/cart.model';
+import { CartService } from '../order/cart/cart.service';
 
 @Component({
   selector: 'app-item-list',
@@ -21,13 +22,12 @@ export class ItemListComponent implements OnInit {
   //   return suma;
   // }
 
-  constructor(private itemListService: ItemListService) { }
+  constructor(private itemListService: ItemListService, private cartService: CartService) { }
 
   ngOnInit() {
     this.itemListService.getItemList()
                         .subscribe(myCats => this.myCats = myCats);
-    this.myCart = new Cart();
-    this.myCart.items = new Array<Item>();
+    this.myCart = this.cartService.myCart;
     // this.myCats = this.itemListService.getItemList();
   }
 
@@ -61,7 +61,7 @@ export class ItemListComponent implements OnInit {
   }
 
   addToCart(item: Item) {
-    this.myCart.items.push(item);
+    this.cartService.addeItem(item);
   }
 
   // searchText(name) {
