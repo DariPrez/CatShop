@@ -1,8 +1,7 @@
-<div class="order">
+<div class="order" *ngIf="!ordered">
 <app-cart (total)="updateTotal($event)"></app-cart>
 <app-shipping-information></app-shipping-information>
 <p> Total a Pagar: {{total | currency: 'EUR': true}}
 </p>
 <button routerLink="" routerLinkActive="active"> Cancelar Orden </button>
 </div>
-

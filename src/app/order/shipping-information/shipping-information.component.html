@@ -1,16 +1,14 @@
 <div class="container" [hidden]="submitted">
     <h1>Información del Envío</h1>
     <form (ngSubmit)="onSubmit()" #shippingForm="ngForm">
-      {{diagnostic}}
     <div class="form-group">
       <label for="name">Nombre</label>
       <input type="text" class="form-control" id="name" required
-      [(ngModel)]="model.name" name="name" #spy #name="ngModel">
+      [(ngModel)]="model.name" name="name" #name="ngModel">
       <div [hidden]="name.valid || name.pristine"
         class="alert alert-danger">
         El Nombre es requerido
       </div>
-      TODO: remove this: {{spy.className}}
     </div>
 
     <div class="form-group">
@@ -21,7 +19,6 @@
         class="alert alert-danger">
         La Direción es requerida
       </div>
-      TODO: remove this: {{model.address}}
     </div>
 
     <div class="form-group">
@@ -32,7 +29,6 @@
         class="alert alert-danger">
         El E-mail es requerido
       </div>
-      TODO: remove this: {{model.email}}
     </div>
     <button type="button" class="btn btn-default" (click)="ordenar(); shippingForm.reset()">Borrar</button>
     <button type="submit" class="btn btn-success" [disabled]="!shippingForm.form.valid">Ordenar</button>

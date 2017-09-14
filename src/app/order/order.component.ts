@@ -11,13 +11,13 @@ import { Item } from '../item-list/item.model'; // TODO BORRAR
 export class OrderComponent implements OnInit {
   myCart: Cart;
   total = 0;
+  ordered: boolean;
 
-
-  totalPay: any;
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    this.totalPay = this.cartService.totalPay();
+    this.myCart = this.cartService.myCart;
+    this.ordered = false;
   }
 
   updateTotal(total) {

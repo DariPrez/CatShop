@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.myCart = this.cartService.myCart;
-    this.total.emit(this.totalItems());
+    this.total.emit(this.totalPay());
   }
 
   public totalItems() {
@@ -29,5 +29,10 @@ export class CartComponent implements OnInit {
 
   public remove(item: Item) {
         this.cartService.removeItem(item);
+        this.total.emit(this.totalPay());
     }
+
+  public totalPay() {
+    return this.cartService.totalPay();
+  }
 }
