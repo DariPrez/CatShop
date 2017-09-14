@@ -1,6 +1,8 @@
-<app-cart [cart]="cart" (total)="updateTotal($event)"></app-cart>
-<p> Total a Pagar: {{totalPay | currency: 'EUR': true}}
+<div class="order">
+<app-cart (total)="updateTotal($event)"></app-cart>
+<app-shipping-information></app-shipping-information>
+<p> Total a Pagar: {{total | currency: 'EUR': true}}
 </p>
-<button routerLink="" routerLinkActive="active">< Cancelar Orden </button>
-
+<button routerLink="" routerLinkActive="active"> Cancelar Orden </button>
+</div>
 

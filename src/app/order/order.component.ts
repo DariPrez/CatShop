@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from './cart/cart.service';
 import { Cart } from './cart/cart.model';
+import { Item } from '../item-list/item.model'; // TODO BORRAR
 
 @Component({
   selector: 'app-order',
@@ -10,6 +11,7 @@ import { Cart } from './cart/cart.model';
 export class OrderComponent implements OnInit {
   myCart: Cart;
   total = 0;
+
 
   totalPay: any;
   constructor(private cartService: CartService) { }
@@ -28,3 +30,10 @@ export class OrderComponent implements OnInit {
 // ng g component shipping-information NOMBRE ADDRESS E-MAIL
 
 }
+
+// @Output()
+//   Shipping: EventEmitter<ShippingInfo> (la info del input) = new event
+
+//   Sumit(){
+//     new shipping.emit Order-[desabled]
+//   }

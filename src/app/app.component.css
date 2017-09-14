@@ -1,3 +1,6 @@
-*{
+.app {
     background-color: cornflowerblue;
+}
+.app h1 {
+    text-align: center;
 }

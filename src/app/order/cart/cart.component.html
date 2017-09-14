@@ -1,6 +1,6 @@
 
-  <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
-
+ <div class="cart">
+ <h3 align=center>Totalidad de Items en Stock: {{totalItems()}}</h3>
 <ul>
   <li *ngFor="let items of myCart.items">
     <p>{{items.name}}</p>
@@ -8,3 +8,4 @@
     <p><button (click)="remove(items)">Eliminar</button></p>
   </li>
 </ul>
+</div>

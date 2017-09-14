@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Cart } from './cart.model';
 import { CartService } from './cart.service';
 import { Item } from '../../item-list/item.model';
@@ -9,8 +9,9 @@ import { Item } from '../../item-list/item.model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-@Input   myCart: Cart;
-@Output total: EventEmitter<number> = new EventEmitter<number>();
+  myCart: Cart;
+
+@Output() total: EventEmitter<number> = new EventEmitter<number>();
   constructor(private cartService: CartService) { }
 
   ngOnInit() {

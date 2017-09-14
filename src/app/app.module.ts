@@ -12,6 +12,7 @@ import { ItemComponent } from './item-list/item/item.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './order/cart/cart.component';
 import { CartService } from './order/cart/cart.service';
+import { ShippingInformationComponent } from './order/shipping-information/shipping-information.component';
 
 const appRoutes: Routes = [
   { path: 'order', component: OrderComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     SearchPipe,
     ItemComponent,
     OrderComponent,
-    CartComponent
+    CartComponent,
+    ShippingInformationComponent
   ],
   imports: [
     BrowserModule,
